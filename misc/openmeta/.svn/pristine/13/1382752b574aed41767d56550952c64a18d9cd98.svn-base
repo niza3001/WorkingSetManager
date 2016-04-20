@@ -1,0 +1,88 @@
+#summary A list of applications that use OpenMeta.
+#labels Featured,Phase-Support
+
+= Introduction =
+
+This is a list of applications that support the reading and/or writing of OpenMeta Tags. Applications that only search OpenMeta Tags are listed under the subsection "Partial Support". (Also, the owners/maintainers of this page have no responsibility for the quality and/or effectiveness of any of the applications presented. YMMV.)
+
+
+= Supporting Applications =
+
+*Ali Rantakari:*<br>
+*Tagger*: http://hasseg.org/tagger/<br>
+*TagLists*: http://hasseg.org/tagLists/
+
+*C-Command:*<br>
+*EagleFiler*: http://c-command.com/eaglefiler/
+
+*Devon Technologies:*<br>
+*DevonThink:* http://www.devon-technologies.com/products/devonthink/index.html
+
+*Gravity Applications:*<br>
+*Tags*: http://gravityapps.com/tags/
+
+*Houdah Software:*<br>
+*HoudahSpot*: http://www.houdah.com/houdahSpot/
+
+*Indev Software:*<br>
+*MailTags*: http://indev.ca/MailTags.html
+
+*Ironic Software:*<br>
+*TagIt*: http://www.ironicsoftware.com/tagit/index.html<br>
+*Deep*: http://www.ironicsoftware.com/deep/index.html<br>
+*Leap 2*: http://www.ironicsoftware.com/leap/index.html<br>
+*Yep 2*: http://www.ironicsoftware.com/yep/index.html<br>
+*Fresh*: http://www.ironicsoftware.com/fresh/index.html<br>
+
+*Jon Stovell:*<br>
+*Tag Folders*: http://tagfolders.vndv.com/
+
+*Markus Guhe*<br>
+*SlipBox:* http://markusguhe.net/slipbox/
+
+*MOApp:*<br>
+*myDocuments*: http://myownapp.com/site/moapp3.0/applications_leo/tools/myDocuments/myDocuments.html<br>
+*myTexts*: http://myownapp.com/site/moapp3.0/applications_leo/writing/mytexts/mytexts.html
+_(OMTags are written on export)_
+
+*Nudge Nudge:*<br>
+*Punakea*: http://www.nudgenudge.eu/punakea
+
+*Onflapp:*<br>
+*Tagoman*: http://onflapp.wordpress.com/tagoman/ 
+
+*Pointworks:*<br>
+*PrimeFiles:* http://www.pointworks.de/software/primefiles/
+
+*Reinvented Software:*<br>
+*Together*: http://reinventedsoftware.com/together/
+
+*St.Clair Software:*<br>
+*Default Folder X*: http://www.stclairsoft.com/DefaultFolderX/
+
+*SweetP Productions:*<br>
+*Meta:* http://sweetpproductions.com/
+
+*West-Forest-Systems:*<br>
+*NeoFinder:* http://www.cdfinder.de/en/en/versions.html<br>
+_(Previously named CDFinder)_
+
+*Cocoatech:*<br>
+*PathFinder*: http://cocoatech.com/pathfinder/
+
+*Doo.com (Mac):*<br>
+*Doo*: https://doo.net/en/index.html
+<br>
+<br>
+<br>
+_*Partial support*:_
+
+*BibDesk:*<br>
+*BibDesk*: http://bibdesk.sourceforge.net/
+
+*DropBox:*<br>
+*DropBox:* https://www.dropbox.com/<br>
+_ Syncs OpenMeta Tags_
+
+*Noodlesoft:*<br>
+*Hazel*: http://www.noodlesoft.com/hazel.php*
