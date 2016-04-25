@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A358F161CCE3F0A004DA93D /* openmeta in Resources */ = {isa = PBXBuildFile; fileRef = 9A358F151CCE3F0A004DA93D /* openmeta */; };
 		9A35AC051CC80E31007BDDDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A35AC041CC80E31007BDDDC /* AppDelegate.swift */; };
 		9A35AC071CC80E31007BDDDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A35AC061CC80E31007BDDDC /* ViewController.swift */; };
 		9A35AC091CC80E31007BDDDC /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A35AC081CC80E31007BDDDC /* Document.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		095088CDC0A09FE207E9E2E9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2E640F1CC82AD60086463D /* Bridging_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridging_header.h; sourceTree = "<group>"; };
+		9A358F151CCE3F0A004DA93D /* openmeta */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = openmeta; path = MISC/openmeta/trunk/trunk/openmeta/releases/2.0/openmeta; sourceTree = "<group>"; };
 		9A35AC011CC80E31007BDDDC /* WSM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A35AC041CC80E31007BDDDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A35AC061CC80E31007BDDDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		9A35ABF81CC80E31007BDDDC = {
 			isa = PBXGroup;
 			children = (
+				9A358F151CCE3F0A004DA93D /* openmeta */,
 				9A35AC031CC80E31007BDDDC /* WSM */,
 				9A35AC171CC80E31007BDDDC /* WSMTests */,
 				9A35AC221CC80E31007BDDDC /* WSMUITests */,
@@ -258,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A358F161CCE3F0A004DA93D /* openmeta in Resources */,
 				9A35AC0B1CC80E31007BDDDC /* Assets.xcassets in Resources */,
 				9A35AC0E1CC80E31007BDDDC /* Main.storyboard in Resources */,
 			);
