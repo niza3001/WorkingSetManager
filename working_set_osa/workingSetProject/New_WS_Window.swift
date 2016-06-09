@@ -44,6 +44,7 @@ class New_WS_Window: NSViewController {
      Controller. www.reddit.com/r/swift/comments/39v3s6/what_exactly_is_the_purpose_of_viewdidload/ */
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("New_WS_Window is opened.")
         // Do view setup here.
     }
     
@@ -72,27 +73,36 @@ class New_WS_Window: NSViewController {
         //1.1 - Constant holds the value of the running application instance.
         let application = NSApplication.sharedApplication()
         
-            //2.1
+            //2.1 - Take necessary steps to set up NSMangedObjectContext.
+                //2.11 - First, we get a reference to the app delegate of the running application.
                 let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
-            
+                //2.12 - From the app delegate, we gain access to an instance of a managedObjectContext and store it in constant 'managedContext'.
                 let managedContext = appDelegate.managedObjectContext
             
             
-            //2.2
+            //2.2 - An entity of the managedObject is created (constant entity) and subsequently stored in a managedObjectContext (constant workingSet).
                 let entity = NSEntityDescription.entityForName("Working_Set", inManagedObjectContext: managedContext)
             
             
                 let workingSet = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
         
-            //2.3
+            //2.3 - The key value, "smartFOlder", accepts a string from the IBOutlet specified earlier, based on whatever is typed within its contents.
                 workingSet.setValue(nameOfWS.stringValue, forKey: "smartFOlder")
         
         
-            //2.4
+            //2.4 - Commit changes to entity stored within the managedObjectContext.
                 do {
                     try managedContext.save()
-                    //2.5
+                    //2.5 -
+                    /*
+                     
+                     6/9/16 4:59 PM
+                     Osa: I'm not knowledgeable of what I'm trying to do here. Essentially, I'm
+                     appending the newly created entity to the ManagedObject to update the list from
+                     the launch window.
+                     
+                     */
                     workingSets.append(workingSet)
                 } catch let error as NSError  {
                     print("Could not save \(error), \(error.userInfo)")
@@ -115,29 +125,29 @@ class New_WS_Window: NSViewController {
         
         
             /*Note: To be moved into Edit_WS_window.swift.*/
-            /*//1
-            let appDelegate =
-                NSApplication.sharedApplication().delegate as! AppDelegate
-            let managedContext = appDelegate.managedObjectContext
-            
-            //2
-            let fetchRequest = NSFetchRequest(entityName: "Working_Set")
-            //3
-            do {
-                let results =
-                    try managedContext.executeFetchRequest(fetchRequest)
-                workingSets = results as! [NSManagedObject]
-            } catch let error as NSError {
-                print("Could not fetch \(error), \(error.userInfo)")
-            }
-        
-        
+                /*//1
+                let appDelegate =
+                    NSApplication.sharedApplication().delegate as! AppDelegate
+                let managedContext = appDelegate.managedObjectContext
+                
+                //2
+                let fetchRequest = NSFetchRequest(entityName: "Working_Set")
+                //3
+                do {
+                    let results =
+                        try managedContext.executeFetchRequest(fetchRequest)
+                    workingSets = results as! [NSManagedObject]
+                } catch let error as NSError {
+                    print("Could not fetch \(error), \(error.userInfo)")
+                }
             
             
-            
-            let specific_workingSet = workingSets[0]
-            specific_workingSet.setValue(nameOfWS.stringValue, forKey: "smartFOlder")
-            */
+                
+                
+                
+                let specific_workingSet = workingSets[0]
+                specific_workingSet.setValue(nameOfWS.stringValue, forKey: "smartFOlder")
+                */
         
         application.abortModal()
         
