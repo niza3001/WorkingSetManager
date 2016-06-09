@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C66C2F51D0A21DA00BE767A /* linksForTutorials in Resources */ = {isa = PBXBuildFile; fileRef = 4C66C2F41D0A21DA00BE767A /* linksForTutorials */; };
 		4C908F591D07CAD9006CC134 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C908F581D07CAD9006CC134 /* WindowController.swift */; };
 		4C908F5B1D07CAE2006CC134 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C908F5A1D07CAE2006CC134 /* Directory.swift */; };
 		4C9390E91D04EF2500A43DB9 /* workingSetProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C9390E71D04EF2500A43DB9 /* workingSetProject.xcdatamodeld */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C66C2F41D0A21DA00BE767A /* linksForTutorials */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = linksForTutorials; sourceTree = "<group>"; };
 		4C908F581D07CAD9006CC134 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		4C908F5A1D07CAE2006CC134 /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		4C9390E81D04EF2500A43DB9 /* workingSetProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = workingSetProject.xcdatamodel; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				4CAEB4B41D03608200F35870 /* Main.storyboard */,
 				4C908F5C1D07CAF0006CC134 /* launchWindowTableView */,
 				4CAEB4B71D03608200F35870 /* Info.plist */,
+				4C66C2F41D0A21DA00BE767A /* linksForTutorials */,
 			);
 			path = workingSetProject;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			files = (
 				4CAEB4B31D03608200F35870 /* Assets.xcassets in Resources */,
 				4CAEB4B61D03608200F35870 /* Main.storyboard in Resources */,
+				4C66C2F51D0A21DA00BE767A /* linksForTutorials in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
