@@ -151,31 +151,7 @@ class ViewController: NSViewController {
     
     override func awakeFromNib() {
         
-        // Setup the pop up button with plural nouns
-        /*var pluralNouns: [String]!
-        let directory1 = "/Users/Osa/Desktop/input"
-        let directory2 = "/Users/Osa/Desktop/MadLibs"
-        let directory3 = "/Users/Osa/Desktop/testModal"
-        let directory4 = "/Users/Osa/Desktop/RWStore"*/
-        
-        
-        
-        //pluralNouns = [directory1, directory2, directory3, directory4]
-        //pluralNounPopup.removeAllItems()
-       //pluralNounPopup.addItemsWithTitles(pluralNouns)
-        //pluralNounPopup.selectItemAtIndex(0)
     }
-    
-    /*
-     
-     func reloadFileList() {
-     directoryItems = directory?.contentsOrderedBy(sortOrder, ascending: sortAscending)
-     tableView.reloadData()
-     }
-     
-     
-     */
-    
     
     
     
@@ -228,10 +204,10 @@ class ViewController: NSViewController {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let newWindowController = storyboard.instantiateControllerWithIdentifier("Open WS") as! NSWindowController
         
-        if let newWS_Window = newWindowController.window/*, textStorage = text.textStorage */{
+        if let newWS_Window = newWindowController.window {
             
             // 2
-            /*let wordCountViewController = wordCountWindow.contentViewController as! WordCountViewController
+            /*let wordCountViewController = wordCountWindow.contentViewController as! Open_WS_Window
              wordCountViewController.wordCount.stringValue = "\(textStorage.words.count)"
              wordCountViewController.paragraphCount.stringValue = "\(textStorage.paragraphs.count)"*/
             
