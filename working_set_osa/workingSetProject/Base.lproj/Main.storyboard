@@ -1115,6 +1115,9 @@ Gw
                             </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="nameOfWS" destination="3v7-AB-gdc" id="GHG-om-bGz"/>
+                    </connections>
                 </viewController>
                 <customObject id="1gE-JM-Fm6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
