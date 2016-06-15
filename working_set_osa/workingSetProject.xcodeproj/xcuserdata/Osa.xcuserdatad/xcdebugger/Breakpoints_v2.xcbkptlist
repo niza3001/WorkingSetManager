@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workingSetProject/ViewController.swift"
-            timestampString = "487188647.633344"
+            timestampString = "487660907.225811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "400"
-            endingLineNumber = "400"
+            startingLineNumber = "404"
+            endingLineNumber = "404"
             landmarkName = "tableView(_:viewForTableColumn:row:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "workingSetProject/Delete_WS_Window.swift"
-            timestampString = "487547224.768887"
+            filePath = "workingSetProject/ViewController.swift"
+            timestampString = "487660907.225811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "DeleteNewWindow(_:)"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "editWindow(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

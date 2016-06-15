@@ -46,6 +46,8 @@ class New_WS_Window: NSViewController {
         //3
         workingSet.setValue(nameOfWS.stringValue, forKey: "smartFOlder")
         
+    
+        
         //4
         do {
             try managedContext.save()
@@ -55,57 +57,24 @@ class New_WS_Window: NSViewController {
             print("Could not save \(error), \(error.userInfo)")
         }
         
-        
+        do {
+            var deliverablePathString = "/Users/Osa/Desktop/\(nameOfWS.stringValue)"
+            try NSFileManager.defaultManager().createDirectoryAtPath(deliverablePathString, withIntermediateDirectories: true, attributes: nil)
+        } catch let error as NSError {
+            NSLog("\(error.localizedDescription)")
+        } catch {
+            print("general error - \(error)")
+        }
         
         
         
         
         
         application.stopModal()
-        //print("Does it work.")
-        //let myString = nameOfWS.stringValue
-        //print(myString)x
-        //application.endModalSession(application)
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    @IBAction func CancelWindow(sender: NSButton) {
+    @IBAction func CancelWindow(sender: NSButton){
         let application = NSApplication.sharedApplication()
-        
-        
-        //1
-        let appDelegate =
-            NSApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        
-        //2
-        let fetchRequest = NSFetchRequest(entityName: "Working_Set")
-        //3
-        do {
-            let results =
-                try managedContext.executeFetchRequest(fetchRequest)
-            workingSets = results as! [NSManagedObject]
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
-        
-        let value = workingSets[0].valueForKey("smartFOlder") as? String
-        //print("value")
-        
-        
-        let specific_workingSet = workingSets[0]
-        specific_workingSet.setValue(nameOfWS.stringValue, forKey: "smartFOlder")
-        print(value)
-        
         application.abortModal()
-        //print("Woof")
     }
 }

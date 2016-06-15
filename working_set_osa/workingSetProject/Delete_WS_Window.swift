@@ -14,10 +14,11 @@ class Delete_WS_Window: NSViewController {
     
     var managedObjectContext: NSManagedObjectContext!
     
+    
     @IBOutlet weak var nameOfWS: NSTextField!
     
     var workingSets = [NSManagedObject]() //Stores instances of entity 'Working-Set'
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -37,7 +38,7 @@ class Delete_WS_Window: NSViewController {
         let name = nameOfWS.stringValue
         //1 - Fetching
         let fetchRequest = NSFetchRequest(entityName: "Working_Set")
-       
+        
         
         //2 - Predicate
         let predicate = NSPredicate(format: "%K == %@","smartFOlder","\(name)")
@@ -49,22 +50,22 @@ class Delete_WS_Window: NSViewController {
         
         //4 - Execture Fetch Request
         do{
-           
+            
             
             let result = try managedContext.executeFetchRequest(fetchRequest)
             
             for managedObject in result {
                 //if let first = managedObject.objectAtIndex(result){
-                    //print("Deleting \(first)")
-                    managedContext.deleteObject(managedObject as! NSManagedObject)
-                    
+                //print("Deleting \(first)")
+                managedContext.deleteObject(managedObject as! NSManagedObject)
+                
                 //}
             }
         } catch{
             let fetchError = error as NSError
             print(fetchError)
         }
- 
+        
         
         
         

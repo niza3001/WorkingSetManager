@@ -652,7 +652,7 @@
             <objects>
                 <windowController storyboardIdentifier="New WS" id="kz7-Ge-TT2" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="zt7-Bx-2Nz">
-                        <windowStyleMask key="styleMask" titled="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="686" y="756" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="3840" height="2137"/>
@@ -670,9 +670,33 @@
             <objects>
                 <viewController id="Dxr-XV-ziZ" customClass="New_WS_Window" customModule="workingSetProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="KUZ-pD-m6G">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="381"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="144"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gD2-XA-GB7">
+                                <rect key="frame" x="18" y="97" width="69" height="27"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name:" id="f6L-eM-YBt">
+                                    <font key="font" metaFont="system" size="22"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vcN-6K-GaN">
+                                <rect key="frame" x="18" y="49" width="444" height="27"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Give a name to the working set." id="upf-fQ-c3Y">
+                                    <font key="font" metaFont="system" size="22"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmz-Oh-5g9">
+                                <rect key="frame" x="110" y="96" width="260" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Byo-tz-MyS">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddo-My-S59">
                                 <rect key="frame" x="104" y="13" width="81" height="32"/>
                                 <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A9L-jM-MC7">
@@ -699,34 +723,6 @@ Gw
                                     <action selector="CancelWindow:" target="Dxr-XV-ziZ" id="FSa-X6-FSc"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gD2-XA-GB7">
-                                <rect key="frame" x="18" y="334" width="69" height="27"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name:" id="f6L-eM-YBt">
-                                    <font key="font" metaFont="system" size="22"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vcN-6K-GaN">
-                                <rect key="frame" x="18" y="205" width="444" height="108"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="upf-fQ-c3Y">
-                                    <font key="font" metaFont="system" size="22"/>
-                                    <string key="title">Click on the desired documents to add to the "working set" as seen below. Click the "Remove" button to remove specfic items from the "Working Set".</string>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <browser verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" enabled="YES" hasHorizontalScroller="YES" allowsEmptySelection="YES" defaultColumnWidth="100" minColumnWidth="100" maxVisibleColumns="1" titled="YES" separatesColumns="YES" allowsTypeSelect="YES" columnResizingType="auto" translatesAutoresizingMaskIntoConstraints="NO" id="j8S-fy-9S5">
-                                <rect key="frame" x="20" y="61" width="440" height="158"/>
-                            </browser>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmz-Oh-5g9">
-                                <rect key="frame" x="110" y="333" width="260" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Byo-tz-MyS">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -735,7 +731,7 @@ Gw
                 </viewController>
                 <customObject id="93c-ay-YWC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382" y="752.5"/>
+            <point key="canvasLocation" x="382" y="634"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="Q95-bR-awD">
@@ -799,6 +795,9 @@ Gw
                             </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="nameOfWS" destination="XRK-zH-5ha" id="jmN-nt-MGi"/>
+                    </connections>
                 </viewController>
                 <customObject id="69V-ci-Ome" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -971,7 +970,7 @@ Gw
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1nN-eV-wjg">
-                                    <rect key="frame" x="1" y="-16" width="0.0" height="16"/>
+                                    <rect key="frame" x="1" y="-15" width="0.0" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="KJC-R4-p6q">
@@ -1046,8 +1045,27 @@ Gw
                                     <action selector="CancelWindow:" target="efW-9K-WS9" id="rSH-6e-Rff"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fvh-AU-tXB">
+                                <rect key="frame" x="88" y="113" width="194" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Label" drawsBackground="YES" id="hNM-RH-cuX">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WWT-No-mEg">
+                                <rect key="frame" x="18" y="113" width="44" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name:" id="e6x-8R-Uoj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="nameOfWS" destination="Fvh-AU-tXB" id="3Ie-TT-jWu"/>
+                    </connections>
                 </viewController>
                 <customObject id="Wg9-vT-xTy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,15 @@ import Cocoa
 
 class Open_WS_Window: NSViewController {
 
+    
+    
+    var managedObjectContext: NSManagedObjectContext!
+    var filePath: String = "/Users/Osa/Desktop/"
+    
+    @IBOutlet weak var nameOfWS: NSTextField!
+    
+    var workingSets = [NSManagedObject]() //Stores instances of entity 'Working-Set'
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -18,7 +27,9 @@ class Open_WS_Window: NSViewController {
     
     @IBAction func dismissOpenWindow(sender: NSButton) {
         
-       let smartFolder = "/Users/Osa/Desktop"
+       let smartFolder = "\(filePath)\(nameOfWS.stringValue)"
+       //let fm = NSFileManager.defaultManager()
+        //fm.createDirectoryAtPath(smartFolder, withIntermediateDirectories: true , attributes: nil)
         
         NSWorkspace.sharedWorkspace().selectFile(nil, inFileViewerRootedAtPath: smartFolder)
         
