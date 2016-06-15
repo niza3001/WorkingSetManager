@@ -9,51 +9,37 @@
 import Cocoa
 
 class Open_WS_Window: NSViewController {
-//////////////////////////////////////////////////////////////////////////////////////////
-/* Note: START OF CLASS                                                                  */
-//////////////////////////////////////////////////////////////////////////////////////////
+
     
     
-    var smartFolder:String?
+    var managedObjectContext: NSManagedObjectContext!
+    var filePath: String = "/Users/Osa/Desktop/"
     
-    //////////////////////////////////////////////////////////////////////////////////////////
-    /*  FUNCTION:      'override func viewDidLoad()'                                   */
-    //////////////////////////////////////////////////////////////////////////////////////////
-    /*Note: Function, 'viewDidLoad()' is called when the view UI of this class is loaded on the display,
-     indicating that it it ready to perform some action. Can be thought of as the "main" of this View
-     Controller. www.reddit.com/r/swift/comments/39v3s6/what_exactly_is_the_purpose_of_viewdidload/ */
+    @IBOutlet weak var nameOfWS: NSTextField!
+    
+    var workingSets = [NSManagedObject]() //Stores instances of entity 'Working-Set'
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Open_WS_Window is opened.")
         // Do view setup here.
     }
     
     
-    
     @IBAction func dismissOpenWindow(sender: NSButton) {
         
-       smartFolder = "/Users/Osa/Desktop"
+       let smartFolder = "\(filePath)\(nameOfWS.stringValue)"
+       //let fm = NSFileManager.defaultManager()
+        //fm.createDirectoryAtPath(smartFolder, withIntermediateDirectories: true , attributes: nil)
         
-        if(smartFolder != nil){
-        NSWorkspace.sharedWorkspace().selectFile(nil, inFileViewerRootedAtPath: smartFolder!)
+        NSWorkspace.sharedWorkspace().selectFile(nil, inFileViewerRootedAtPath: smartFolder)
         
         
         let application = NSApplication.sharedApplication()
         application.stopModal()
-        }
-        else {
-            return
-        }
     }
-    
-    
     
     @IBAction func CancelWindow(sender: NSButton) {
         let application = NSApplication.sharedApplication()
         application.stopModal()
     }
-    
-//////////////////////////////////////////////////////////////////////////////////////////
-/* Note: END OF CLASS                                                                  */
-//////////////////////////////////////////////////////////////////////////////////////////
 }

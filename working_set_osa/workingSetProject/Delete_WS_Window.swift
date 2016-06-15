@@ -10,45 +10,61 @@ import Cocoa
 import CoreData
 
 class Delete_WS_Window: NSViewController {
-//////////////////////////////////////////////////////////////////////////////////////////
-/* Note: START OF CLASS                                                                  */
-//////////////////////////////////////////////////////////////////////////////////////////
     
     
+    var managedObjectContext: NSManagedObjectContext!
     
     
+    @IBOutlet weak var nameOfWS: NSTextField!
     
+    var workingSets = [NSManagedObject]() //Stores instances of entity 'Working-Set'
     
-    
-    
-    /*Note: Stores instances of entity 'Working-Set' */
-    var workingSets = [NSManagedObject]()
-
-    
-    
-    /*Note: Function, 'viewDidLoad()' is called when the view UI of this class is loaded on the display,
-     indicating that it it ready to perform some aciton. Can be thought of as the "main" of this View
-     Controller. www.reddit.com/r/swift/comments/39v3s6/what_exactly_is_the_purpose_of_viewdidload/ */
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
     
     
-    
-    //////////////////////////////////////////////////////////////////////////////////////////
-    /* FUNCTION: 'IBAction func 'dismissEditWindow(sender: NSButton)'                        */
-    //////////////////////////////////////////////////////////////////////////////////////////
-    /*Note: This IBAction function serves the purpose of committing the deletion of an entity
-     for the data model to a persistent store through
-     NSManagedObject's method, ".save()".                       */
     @IBAction func DeleteNewWindow(sender: NSButton) {
         let application = NSApplication.sharedApplication()
         
+        //1
+        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
         
         
+        print("Hello, \(nameOfWS.stringValue)")
+        let name = nameOfWS.stringValue
+        //1 - Fetching
+        let fetchRequest = NSFetchRequest(entityName: "Working_Set")
         
         
+        //2 - Predicate
+        let predicate = NSPredicate(format: "%K == %@","smartFOlder","\(name)")
+        fetchRequest.predicate = predicate
+        
+        //3 - Add Sort Descriptor
+        //let sortDescriptor1 = NSSortDescriptor(key: "smartFOlder", ascending: true)
+        //fetchRequest.sortDescriptors = [sortDescriptor1]
+        
+        //4 - Execture Fetch Request
+        do{
+            
+            
+            let result = try managedContext.executeFetchRequest(fetchRequest)
+            
+            for managedObject in result {
+                //if let first = managedObject.objectAtIndex(result){
+                //print("Deleting \(first)")
+                managedContext.deleteObject(managedObject as! NSManagedObject)
+                
+                //}
+            }
+        } catch{
+            let fetchError = error as NSError
+            print(fetchError)
+        }
         
         
         
@@ -57,17 +73,8 @@ class Delete_WS_Window: NSViewController {
         application.stopModal()
     }
     
-    
-    //////////////////////////////////////////////////////////////////////////////////////////
-    /* FUNCTION: 'IBAction func 'CancelWindow(sender: NSButton)'                            */
-    //////////////////////////////////////////////////////////////////////////////////////////
-    /*Note: This IBAction function serves the purpose of closing the Modal Window upon pressing
-     button, 'Cancel'.*/
     @IBAction func CancelWindow(sender: NSButton) {
         let application = NSApplication.sharedApplication()
         application.stopModal()
     }
-//////////////////////////////////////////////////////////////////////////////////////////
-/* Note: END OF CLASS                                                                  */
-//////////////////////////////////////////////////////////////////////////////////////////
 }

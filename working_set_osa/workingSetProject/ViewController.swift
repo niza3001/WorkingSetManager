@@ -151,7 +151,31 @@ class ViewController: NSViewController {
     
     override func awakeFromNib() {
         
+        // Setup the pop up button with plural nouns
+        /*var pluralNouns: [String]!
+        let directory1 = "/Users/Osa/Desktop/input"
+        let directory2 = "/Users/Osa/Desktop/MadLibs"
+        let directory3 = "/Users/Osa/Desktop/testModal"
+        let directory4 = "/Users/Osa/Desktop/RWStore"*/
+        
+        
+        
+        //pluralNouns = [directory1, directory2, directory3, directory4]
+        //pluralNounPopup.removeAllItems()
+       //pluralNounPopup.addItemsWithTitles(pluralNouns)
+        //pluralNounPopup.selectItemAtIndex(0)
     }
+    
+    /*
+     
+     func reloadFileList() {
+     directoryItems = directory?.contentsOrderedBy(sortOrder, ascending: sortAscending)
+     tableView.reloadData()
+     }
+     
+     
+     */
+    
     
     
     
@@ -182,9 +206,11 @@ class ViewController: NSViewController {
                 }
             }
             
+            //application.runModalForWindow(newWS_Window)
             application.endModalSession(session)
             application.stopModal()
         }
+        reloadFileList()
     }
     
     
@@ -202,18 +228,18 @@ class ViewController: NSViewController {
         
         // 1
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        let newWindowController = storyboard.instantiateControllerWithIdentifier("Open WS") as! NSWindowController
+        let openWindowController = storyboard.instantiateControllerWithIdentifier("Open WS") as! NSWindowController
         
-        if let newWS_Window = newWindowController.window {
+        if let openWS_Window = openWindowController.window/*, textStorage = text.textStorage */{
             
             // 2
-            /*let wordCountViewController = wordCountWindow.contentViewController as! Open_WS_Window
-             wordCountViewController.wordCount.stringValue = "\(textStorage.words.count)"
-             wordCountViewController.paragraphCount.stringValue = "\(textStorage.paragraphs.count)"*/
+            let  open_WS_WindowController = openWS_Window.contentViewController as! Open_WS_Window
+             print(nameOfWS)
+             open_WS_WindowController.nameOfWS.stringValue = nameOfWS
             
             // 3
             let application = NSApplication.sharedApplication()
-            application.runModalForWindow(newWS_Window)
+            application.runModalForWindow(openWS_Window)
         }
     }
     
@@ -221,38 +247,40 @@ class ViewController: NSViewController {
         
         // 1
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        let newWindowController = storyboard.instantiateControllerWithIdentifier("Edit WS") as! NSWindowController
+        let editWindowController = storyboard.instantiateControllerWithIdentifier("Edit WS") as! NSWindowController
         
-        if let newWS_Window = newWindowController.window/*, textStorage = text.textStorage */{
+        if let editWS_Window = editWindowController.window/*, textStorage = text.textStorage */{
             
             // 2
-            /*let wordCountViewController = wordCountWindow.contentViewController as! WordCountViewController
-             wordCountViewController.wordCount.stringValue = "\(textStorage.words.count)"
-             wordCountViewController.paragraphCount.stringValue = "\(textStorage.paragraphs.count)"*/
+            let edit_WS_WindowController = editWS_Window.contentViewController as! Edit_WS_Window
+             edit_WS_WindowController.nameOfWS.stringValue = nameOfWS
             
             // 3
             let application = NSApplication.sharedApplication()
-            application.runModalForWindow(newWS_Window)
+            application.runModalForWindow(editWS_Window)
         }
+        reloadFileList()
     }
     
     @IBAction func deleteWindow(sender: AnyObject) {
         
         // 1
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        let newWindowController = storyboard.instantiateControllerWithIdentifier("Delete WS") as! NSWindowController
+        let delWindowController = storyboard.instantiateControllerWithIdentifier("Delete WS") as! NSWindowController
         
-        if let newWS_Window = newWindowController.window/*, textStorage = text.textStorage */{
+        if let delWS_Window = delWindowController.window/*, textStorage = nameOfWS */{
             
             // 2
-            /*let wordCountViewController = wordCountWindow.contentViewController as! WordCountViewController
-             wordCountViewController.wordCount.stringValue = "\(textStorage.words.count)"
-             wordCountViewController.paragraphCount.stringValue = "\(textStorage.paragraphs.count)"*/
+            let delete_WS_WindowController = delWS_Window.contentViewController as! Delete_WS_Window
+             delete_WS_WindowController.nameOfWS.stringValue = nameOfWS
+ 
             
             // 3
             let application = NSApplication.sharedApplication()
-            application.runModalForWindow(newWS_Window)
+            application.runModalForWindow(delWS_Window)
         }
+        reloadFileList()
+ 
     }
     
     func reloadFileList() {

@@ -70,6 +70,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             do {
                 try coordinator!.addPersistentStoreWithType(NSXMLStoreType, configuration: nil, URL: url, options: nil)
             } catch {
+           
                 failError = error as NSError
             }
         }
